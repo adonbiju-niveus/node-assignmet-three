@@ -6,7 +6,7 @@ content-type: application/json
 
 {
     "name":"Adon Biju",
-    "number":"1234567890",
+    "number":"12345678905",
     "emailId":"adon@gmail.com"
 }
 
@@ -19,7 +19,6 @@ PUT  http://localhost:3000/api/updateUser/adon@gmail.com
 content-type: application/json
 
 {
-    "name":"Adon Biju1",
-    "number":"1234567890",
-    "emailId":"adon@gmail.com"
+    "name":"Adon Biju",
+    "number":"987654321"
 }
