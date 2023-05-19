@@ -13,3 +13,13 @@ content-type: application/json
 ###
 
 GET   http://localhost:3000/api/getAllUsers
+
+###
+PUT  http://localhost:3000/api/updateUser/adon@gmail.com
+content-type: application/json
+
+{
+    "name":"Adon Biju1",
+    "number":"1234567890",
+    "emailId":"adon@gmail.com"
+}

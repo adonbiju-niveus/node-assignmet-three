@@ -37,3 +37,23 @@ exports.getAllUsers = async (req,res)=>{
 
     }
  }
+
+
+exports.updateUser = async (req,res)=>{
+    try {
+        logger.info(`Updating user for ${req.body} and for query ${req.params}`);
+        const emailId=req.params.emailId;
+        const user = await User.findOneAndUpdate({ emailId: emailId }, req.body, { new: true });
+        if (!user) {
+          res.status(404).json({ message: 'User not found' });
+          logger.info('user not found');
+        } else {
+          res.status(200).json({message:"user updated successfull",data:user});
+          logger.info(`Update User API executed for ${req.body}`)
+        }
+
+    }catch(error){
+        logger.error(`Failed to update user: ${error}`)
+        res.status(500).json({ error: 'Failed to update user' });
+    }
+}
