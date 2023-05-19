@@ -1,1 +1,11 @@
 GET http://localhost:3000
+
+###
+POST  http://localhost:3000/api/createUser
+content-type: application/json
+
+{
+    "name":"Adon Biju",
+    "number":"1234567890",
+    "emailId":"adon@gmail.com"
+}
