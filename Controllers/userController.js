@@ -12,7 +12,7 @@ exports.createUser = async (req,res)=>{
     });
     await newUser.save();
     res.status(201).json({message:"user created successfully",data:newUser});
-    logger.info(`Create  User API executed for ${req.body}`)
+    logger.info(`Create  User API executed sucessfully for ${req.body}`)
    }catch(err){
     logger.error(`Create  User API error:${error}`)
     res.status(500).json({ error: 'Failed to create user' });
@@ -24,7 +24,7 @@ exports.getAllUsers = async (req,res)=>{
     try {
         const allUser = await User.find();
         if(allUser){
-            logger.info(`get User API executed`)
+            logger.info(`get All Users API executed sucessfully `)
             res.status(200).json({message:"success",data:allUser});
         }
         else{
@@ -41,7 +41,7 @@ exports.getAllUsers = async (req,res)=>{
 
 exports.updateUser = async (req,res)=>{
     try {
-        logger.info(`Updating user for ${req.body} and for query ${req.params}`);
+        logger.info(`Updating user for ${req.body} and for query ${req.params} as initiated`);
         const emailId=req.params.emailId;
         const user = await User.findOneAndUpdate({ emailId: emailId }, req.body, { new: true });
         if (!user) {
@@ -49,7 +49,7 @@ exports.updateUser = async (req,res)=>{
           logger.info('user not found');
         } else {
           res.status(200).json({message:"user updated successfull",data:user});
-          logger.info(`Update User API executed for ${req.body}`)
+          logger.info(`Update User API executed sucessfully for ${req.body}`)
         }
 
     }catch(error){
