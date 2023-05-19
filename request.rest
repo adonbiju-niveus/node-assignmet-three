@@ -9,3 +9,7 @@ content-type: application/json
     "number":"1234567890",
     "emailId":"adon@gmail.com"
 }
+
+###
+
+GET   http://localhost:3000/api/getAllUsers
