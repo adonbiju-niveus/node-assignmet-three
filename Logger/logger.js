@@ -12,7 +12,8 @@ const logLevels ={
 const logger = createLogger({
     levels:logLevels,
     format: format.combine(format.timestamp(), format.json()),
-    transports:[new transports.Console()],
+    transports:[new transports.Console(),new transports.File({ filename: './Logs/combined.log' }),],
+    
 });
 
 module.exports = logger;
